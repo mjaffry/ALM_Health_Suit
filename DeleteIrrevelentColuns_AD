@@ -1,0 +1,25 @@
+Sub DeleteIrrevelentColuns_AD()
+Range("A1").Select
+
+Do Until ActiveCell.Value = ""
+
+'Pre-W2K Name
+'E-Mail
+
+
+    If ActiveCell.Value = "Pre-W2K Name" _
+        Or ActiveCell.Value = "E-Mail" _
+        Then
+
+        ActiveCell.Offset(0, 1).Select
+
+    Else
+
+        ActiveCell.EntireColumn.Select
+        Selection.Delete Shift:=xlToLeft
+        Selection.End(xlUp).Select
+
+    End If
+Loop
+
+End Sub
