@@ -1,0 +1,21 @@
+Sub DeleteIrrevelentColuns()
+Range("A1").Select
+
+Do Until ActiveCell.Value = ""
+
+    If ActiveCell.Value = "Hardware Serial Number" _
+          Then
+
+        ActiveCell.Offset(0, 1).Select
+
+    Else
+
+        ActiveCell.EntireColumn.Select
+        Selection.Delete Shift:=xlToLeft
+        Selection.End(xlUp).Select
+
+    End If
+Loop
+
+End Sub
+
